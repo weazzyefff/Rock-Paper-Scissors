@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tic-Tac-Toe</title>
+</head>
+
+<body>
+    <script>
+
+        function getComputerChoice() {
+            let cpuChoices = ['Rock', 'Paper', 'Scissors'];
+            let random = Math.floor(Math.random() * cpuChoices.length);
+            console.log((cpuChoices[random]));
+            return (cpuChoices[random]);
+        }
+        getComputerChoice();
+
+
+        function getPlayerChoice() {
+            let playerSelection = prompt('Please enter your selection (Rock, Paper, Scissors)');
+            console.log(playerSelection);
+            return playerSelection
+        }
+        getPlayerChoice();
+
+        /*function playRound(playerSelection, cpuChoices[random]) {
+            console.log(`Player: ${getPlayerChoice()}
+                        Computer: ${getComputerChoice()}`)
+
+            if (getPlayerChoice().toUpperCase() === getComputerChoice().toUpperCase) {
+                console.log('You drew!')
+            }
+            else if (getPlayerChoice() === 'Rock'.toUpperCase() && getComputerChoice() === 'Paper'.toUpperCase()) {
+                console.log('Paper beats Rock. You lose!');
+            }
+        }*/
+        
+
+    </script>
+</body>
+
+</html>
