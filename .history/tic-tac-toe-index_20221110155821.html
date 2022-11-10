@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tic-Tac-Toe</title>
+</head>
+
+<body>
+    <script>
+
+        function getComputerChoice() {
+            let cpuChoices = ['Rock', 'Paper', 'Scissors'];
+            let random = Math.floor(Math.random() * cpuChoices.length);
+            return (cpuChoices[random]);
+        }
+
+        function playerChoice() {
+            let playerSelection = prompt('Please enter your selection (Rock, Paper, Scissors)');
+            return playerSelection
+        }
+        playerChoice();
+
+        function playRound(playerSelection, computerSelection) {
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
