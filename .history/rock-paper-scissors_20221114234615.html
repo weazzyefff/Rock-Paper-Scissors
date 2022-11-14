@@ -9,7 +9,7 @@
 
 <body>
     <script>
-        game();
+        playRound();
         function playRound() {
             const computerSelection = getComputerChoice();
             const playerSelection = getPlayerChoice();
@@ -33,7 +33,6 @@
         function checkWinner(computerSelection, playerSelection) {
             if (computerSelection === playerSelection) {
                 console.log('You drew!');
-
             } else if (computerSelection === 'ROCK'&& playerSelection === 'PAPER') {
                 console.log('You Win! Paper beats Rock!');
                 
@@ -57,7 +56,6 @@
 
         function game() {
             for  (let i = 0; i < 5; i++) {
-                playRound();
 
             }
         }

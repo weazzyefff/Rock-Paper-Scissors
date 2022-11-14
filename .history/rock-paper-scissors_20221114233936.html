@@ -9,7 +9,7 @@
 
 <body>
     <script>
-        game();
+        playRound();
         function playRound() {
             const computerSelection = getComputerChoice();
             const playerSelection = getPlayerChoice();
@@ -33,36 +33,26 @@
         function checkWinner(computerSelection, playerSelection) {
             if (computerSelection === playerSelection) {
                 console.log('You drew!');
-
             } else if (computerSelection === 'ROCK'&& playerSelection === 'PAPER') {
                 console.log('You Win! Paper beats Rock!');
-                
+                return computerSelection, playerSelection;
             } else if (computerSelection === 'ROCK' && playerSelection === 'SCISSORS') {
                 console.log('You Lose! Rock beats Scissors!');
-                
+                return computerSelection, playerSelection;
             } else if (computerSelection === 'PAPER' && playerSelection === 'ROCK') {
                 console.log('You Lose! Paper beats Rock!');
-                
+                return computerSelection, playerSelection;
             } else if (computerSelection === 'PAPER' && playerSelection === 'SCISSORS') {
                 console.log('You Win! Scissors beats Paper!');
-                
+                return computerSelection, playerSelection;
             } else if (computerSelection === 'SCISSORS' && playerSelection === 'ROCK') {
-                console.log('You Win! Rock beats Scissors!');
-                
-            }else if (computerSelection === 'SCISSORS' && playerSelection === 'PAPER') {
+                console.log('You Win! ROck beats Scissors!');
+                return computerSelection, playerSelection;
+            }else if (computerSelection === 'SCISSORS' && playerSelection === 'Paper') {
                 console.log('You Lose! Scissors beats paper!');
-               
+                return computerSelection, playerSelection;
             }
         }
-
-        function game() {
-            for  (let i = 0; i < 5; i++) {
-                playRound();
-
-            }
-        }
-
-
     </script>
 </body>
 
