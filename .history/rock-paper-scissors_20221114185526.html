@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rock-Paper-Scissors</title>
+</head>
+
+<body>
+    <script>
+        function playRound() {
+
+
+            function getComputerChoice() {
+                let cpuChoices = ['Rock', 'Paper', 'Scissors'];
+                let random = Math.floor(Math.random() * cpuChoices.length);
+                console.log((cpuChoices[random]));
+                return computerSelection = (cpuChoices[random]).toUpperCase();
+            }
+            getComputerChoice();
+
+
+            function getPlayerChoice() {
+                let playerSelection = prompt('Please enter your selection (Rock, Paper, Scissors)');
+                console.log(playerSelection);
+                return playerSelection.toUpperCase();
+            }
+            //console.log(getPlayerChoice()); >> These were just the checks to ensure f's were returning
+            //console.log(getComputerChoice()); >> uppercase chars
+            getPlayerChoice();
+
+            function checkWinner(computerSelection, playerSelection) {
+                if (getComputerChoice() === playerSelection()) {
+                    console.log('You drew!');
+                } else if (computerSelection === 'ROCK' && playerSelection === 'PAPER') {
+                    console.log('You Win! Paper beats Rock!');
+                }else if (computerSelection === 'PAPER' && playerSelection === 'ROCK') {
+                    console.log('You Lose! Paper beats Rock!');
+                }else if (computerSelection === 'SCISSORS' && playerSelection === 'PAPER') {
+                    console.log('You Lose! Scissors beats Paper!');
+                }
+            }
+        }
+            playRound();
+    </script>
+</body>
+
+</html>

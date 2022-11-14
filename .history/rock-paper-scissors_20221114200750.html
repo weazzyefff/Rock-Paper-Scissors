@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rock-Paper-Scissors</title>
+</head>
+
+<body>
+    <script>
+        function playRound() {
+
+            const computerSelection = getComputerChoice();
+            const playerSelection = getPlayerChoice();
+
+            function getComputerChoice() {
+                let cpuChoices = ['Rock', 'Paper', 'Scissors'];
+                let random = Math.floor(Math.random() * cpuChoices.length);
+                computerSelection = (cpuChoices[random]).toUpperCase();
+                console.log((cpuChoices[random]));
+                return computerSelection;
+            }
+            getComputerChoice();
+
+
+            function getPlayerChoice() {
+                let playerSelection = prompt('Please enter your selection (Rock, Paper, Scissors)');
+                console.log(playerSelection);
+                return  playerSelection;
+            }
+            //console.log(getPlayerChoice()); >> These were just the checks to ensure f's were returning
+            //console.log(getComputerChoice()); >> uppercase chars
+            getPlayerChoice();
+
+            function checkWinner(computerSelection, playerSelection) {
+                if (computerSelection === playerSelection) {
+                    console.log('You drew!');
+                    return computerSelection, playerSelection;
+                } else if (computerSelection === 'ROCK' && playerSelection === 'PAPER') {
+                    console.log('You Win! Paper beats Rock!');
+                    return computerSelection, playerSelection;
+                } else if (computerSelection === 'PAPER' && playerSelection === 'ROCK') {
+                    console.log('You Lose! Paper beats Rock!');
+                    return computerSelection, playerSelection;
+                } else if (computerSelection === 'SCISSORS' && playerSelection === 'PAPER') {
+                    console.log('You Lose! Scissors beats Paper!');
+                    return computerSelection, playerSelection;
+                }
+                console.log(computerSelection);
+                console.log(playerSelection);
+            }
+            console.log(computerSelection);
+            console.log(playerSelection);
+        }
+        playRound();
+    </script>
+</body>
+
+</html>

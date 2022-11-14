@@ -14,8 +14,11 @@
 
             const computerSelection = getComputerChoice();
             const playerSelection = getPlayerChoice();
+            getComputerChoice();
+            getPlayerChoice();
             checkWinner(computerSelection, playerSelection);
         }
+
 
         function getComputerChoice() {
             const cpuChoices = ['Rock', 'Paper', 'Scissors'];
@@ -24,12 +27,18 @@
             console.log(`Inside getComputerChoice and we log: ${computerSelection}`);
             return computerSelection;
         }
+        
+
 
         function getPlayerChoice() {
-            const playerSelection = prompt('Please enter your selection (Rock, Paper, Scissors)').toUpperCase();
+            const playerSelection = prompt('Please enter your selection (Rock, Paper, Scissors)');
+            const playerSelection = playerSelection.toUpperCase();
             console.log(`Inside getplayerChoice and we log: ${playerSelection}`);
             return playerSelection;
         }
+        //console.log(getPlayerChoice()); >> These were just the checks to ensure f's were returning
+        //console.log(getComputerChoice()); >> uppercase chars
+    
 
         function checkWinner(computerSelection, playerSelection) {
             if (computerSelection === playerSelection) {
@@ -45,6 +54,8 @@
                 console.log('You Lose! Scissors beats Paper!');
                 return computerSelection, playerSelection;
             }
+            console.log(computerSelection);
+            console.log(playerSelection);
         }
     </script>
 </body>
