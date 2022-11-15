@@ -9,11 +9,6 @@
 
 <body>
     <script>
-
-        let playerScore = 0;
-        let computerScore = 0;
-
-
         game();
         function playRound() {
             const computerSelection = getComputerChoice();
@@ -30,29 +25,15 @@
         }
 
         function getPlayerChoice() {
-
-            let playerSelection = prompt('Please enter your selection (Rock, Paper, Scissors)').toUpperCase();
+            const playerSelection = prompt('Please enter your selection (Rock, Paper, Scissors)').toUpperCase();
             console.log(`Inside getplayerChoice() and we log: ${playerSelection}`);
-            switch (playerSelection) {
-                case 'ROCK':
-                    playerSelection = 'ROCK'
-                    break;
-                case 'SCISSORS':
-                    playerSelection = 'SCISSORS'
-                    break;
-                case 'PAPER':
-                    playerSelection = 'PAPER';
-                    break;
-                default: alert("Please enter either 'Rock', 'Paper', or 'Scissors'.");
-            }
             return playerSelection;
         }
 
-
-
-
-
         function getResult(computerSelection, playerSelection) {
+            const playerScore = 0;
+            const ComputerScore = 0;
+           
 
 
             if (computerSelection === playerSelection) {
@@ -60,50 +41,39 @@
 
             } else if (computerSelection === 'ROCK' && playerSelection === 'PAPER') {
                 console.log('You Win! Paper beats Rock!');
-                playerScore++;
-
+                playerScore += playerScore;
 
             } else if (computerSelection === 'ROCK' && playerSelection === 'SCISSORS') {
                 console.log('You Lose! Rock beats Scissors!');
-                computerScore++;
-
+                ComputerScore += ComputerScore;
             } else if (computerSelection === 'PAPER' && playerSelection === 'ROCK') {
                 console.log('You Lose! Paper beats Rock!');
-                computerScore++;
+                ComputerScore += ComputerScore;
 
             } else if (computerSelection === 'PAPER' && playerSelection === 'SCISSORS') {
                 console.log('You Win! Scissors beats Paper!');
-                playerScore++;
-
+                playerScore += playerScore;
 
             } else if (computerSelection === 'SCISSORS' && playerSelection === 'ROCK') {
                 console.log('You Win! Rock beats Scissors!');
-                playerScore++;
-
+                playerScore += playerScore;
 
             } else if (computerSelection === 'SCISSORS' && playerSelection === 'PAPER') {
                 console.log('You Lose! Scissors beats paper!');
-                computerScore++;
-                //0 + 1 = 1
+                ComputerScore += ComputerScore;
 
             }
-            console.log(`You're Score is: ${playerScore}`);
-            console.log(`Computer Score is: ${computerScore}`);
         }
 
 
-        function game() {
-            for (let roundNo = 1; roundNo < 6; roundNo++) {
-                console.log(`This is round: ${roundNo}`);
-                playRound();
+            function game() {
+                for (let roundNo = 1; roundNo < 6; roundNo++) {
+                    console.log(`This is round: ${roundNo}`);
+                    playRound();
+
+
+                }
             }
-            if (computerScore >= playerScore) {
-                console.log('Bad luck! You lost the game!')
-            }
-            else if (playerScore >= computerScore) {
-                console.log('Congratulations! You won the game!')
-            }
-        }
 
 
     </script>

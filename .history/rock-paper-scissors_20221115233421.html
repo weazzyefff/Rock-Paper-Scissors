@@ -30,27 +30,26 @@
         }
 
         function getPlayerChoice() {
-
-            let playerSelection = prompt('Please enter your selection (Rock, Paper, Scissors)').toUpperCase();
-            console.log(`Inside getplayerChoice() and we log: ${playerSelection}`);
-            switch (playerSelection) {
-                case 'ROCK':
-                    playerSelection = 'ROCK'
-                    break;
-                case 'SCISSORS':
-                    playerSelection = 'SCISSORS'
-                    break;
-                case 'PAPER':
-                    playerSelection = 'PAPER';
-                    break;
-                default: alert("Please enter either 'Rock', 'Paper', or 'Scissors'.");
+            while (true) {
+                let playerSelection = prompt('Please enter your selection (Rock, Paper, Scissors)').toUpperCase();
+                console.log(`Inside getplayerChoice() and we log: ${playerSelection}`);
+                switch (playerSelection) {
+                    case 'ROCK':
+                        playerSelection = 'ROCK'
+                        break;
+                    case 'SCISSORS':
+                        playerSelection = 'SCISSORS'
+                        break;
+                    case 'PAPER':
+                        playerSelection = 'PAPER';
+                        break;
+                    default: alert("Please enter either 'Rock', 'Paper', or 'Scissors'.");
+                }
             }
-            return playerSelection;
         }
 
 
-
-
+        
 
         function getResult(computerSelection, playerSelection) {
 
