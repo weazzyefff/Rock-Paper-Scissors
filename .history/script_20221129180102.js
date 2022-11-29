@@ -41,7 +41,10 @@ function playRound() {
     // Get the computer choice
     let computerSelection = getComputerChoice();
 
-
+    // Create the Results <div>
+    let resultDiv = document.createElement("div");
+    resultDiv.textContent = `Computer Score: ${computerScore} Player Score: ${playerScore}`;
+    document.body.appendChild(resultDiv);
 
     //Check winner
     if (computerSelection === playerSelection) {
@@ -90,22 +93,7 @@ function playRound() {
         //0 + 1 = 1
 
     }
-    // Create the Results <div>
-    let resultDiv = document.createElement("div");
-    resultDiv.textContent = `Computer Score: ${computerScore} Player Score: ${playerScore}`;
-    document.body.appendChild(resultDiv);
 
-    if (computerScore >= 5) {
-        let resultDiv = document.createElement("div");
-        resultDiv.textContent = `Back luck! You lose the game.`;
-        document.body.appendChild(resultDiv);
-        
-    } else if ( playerScore >= 5) {
-        let resultDiv = document.createElement("div");
-        resultDiv.textContent = `Congratulations! You won the game!`;
-        document.body.appendChild(resultDiv);
-        
-    }
 
 }
 function getComputerChoice() {

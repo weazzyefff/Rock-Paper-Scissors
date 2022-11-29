@@ -34,78 +34,49 @@ sbutton.addEventListener("click", () => {
     playRound();
 });
 
-
+let resultDiv = document.createElement("div");
+resultDiv.textContent = 'Results ='
+document.body.appendChild(resultDiv);
 
 function playRound() {
-
-    // Get the computer choice
     let computerSelection = getComputerChoice();
-
-
-
-    //Check winner
     if (computerSelection === playerSelection) {
 
+        console.log('You drew!');
         let div = document.createElement("div");
-        div.textContent = 'You drew!';
+        div.textContent = 'Results ='
         document.body.appendChild(div);
 
     } else if (computerSelection === 'ROCK' && playerSelection === 'PAPER') {
-        let div = document.createElement("div");
-        div.textContent = 'You Win! Paper beats Rock!';
-        document.body.appendChild(div);
+        console.log('You Win! Paper beats Rock!');
         playerScore++;
 
 
     } else if (computerSelection === 'ROCK' && playerSelection === 'SCISSORS') {
-        let div = document.createElement("div");
-        div.textContent = 'You Lose! Rock beats Scissors!';
-        document.body.appendChild(div);
+        console.log('You Lose! Rock beats Scissors!');
         computerScore++;
 
     } else if (computerSelection === 'PAPER' && playerSelection === 'ROCK') {
-        let div = document.createElement("div");
-        div.textContent = 'You Lose! Paper beats Rock!';
-        document.body.appendChild(div);
+        console.log('You Lose! Paper beats Rock!');
         computerScore++;
 
     } else if (computerSelection === 'PAPER' && playerSelection === 'SCISSORS') {
-        let div = document.createElement("div");
-        div.textContent = 'You Win! Scissors beats Paper!';
-        document.body.appendChild(div);
+        console.log('You Win! Scissors beats Paper!');
         playerScore++;
 
 
     } else if (computerSelection === 'SCISSORS' && playerSelection === 'ROCK') {
-        let div = document.createElement("div");
-        div.textContent = 'You Win! Rock beats Scissors!';
-        document.body.appendChild(div);
+        console.log('You Win! Rock beats Scissors!');
         playerScore++;
 
+
     } else if (computerSelection === 'SCISSORS' && playerSelection === 'PAPER') {
-        let div = document.createElement("div");
-        div.textContent = 'You Lose! Scissors beats paper!';
-        document.body.appendChild(div);
+        console.log('You Lose! Scissors beats paper!');
         computerScore++;
         //0 + 1 = 1
 
     }
-    // Create the Results <div>
-    let resultDiv = document.createElement("div");
-    resultDiv.textContent = `Computer Score: ${computerScore} Player Score: ${playerScore}`;
-    document.body.appendChild(resultDiv);
 
-    if (computerScore >= 5) {
-        let resultDiv = document.createElement("div");
-        resultDiv.textContent = `Back luck! You lose the game.`;
-        document.body.appendChild(resultDiv);
-        
-    } else if ( playerScore >= 5) {
-        let resultDiv = document.createElement("div");
-        resultDiv.textContent = `Congratulations! You won the game!`;
-        document.body.appendChild(resultDiv);
-        
-    }
 
 }
 function getComputerChoice() {

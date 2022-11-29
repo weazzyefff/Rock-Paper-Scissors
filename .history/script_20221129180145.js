@@ -95,18 +95,6 @@ function playRound() {
     resultDiv.textContent = `Computer Score: ${computerScore} Player Score: ${playerScore}`;
     document.body.appendChild(resultDiv);
 
-    if (computerScore >= 5) {
-        let resultDiv = document.createElement("div");
-        resultDiv.textContent = `Back luck! You lose the game.`;
-        document.body.appendChild(resultDiv);
-        
-    } else if ( playerScore >= 5) {
-        let resultDiv = document.createElement("div");
-        resultDiv.textContent = `Congratulations! You won the game!`;
-        document.body.appendChild(resultDiv);
-        
-    }
-
 }
 function getComputerChoice() {
     const cpuChoices = ['Rock', 'Paper', 'Scissors'];
